@@ -14,10 +14,6 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-/**
- *
- * @author Lemon Knight
- */
 public class FakeX509TrustManager implements X509TrustManager {
 
     private static final Logger LOGGER = Logger.getLogger(FakeX509TrustManager.class.getPackage().getName());

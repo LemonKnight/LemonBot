@@ -4,7 +4,10 @@ import de.lemonknight.bot.BotBehavior;
 import static de.lemonknight.util.Utils.unwrapCDATA;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.naming.Binding;
 import javax.naming.InitialContext;
+import javax.naming.NameClassPair;
+import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
 import org.jivesoftware.smack.PacketListener;
 import org.jivesoftware.smack.XMPPException;
@@ -116,7 +119,7 @@ public class MessageListener implements PacketListener {
 
     private ILolChatConnetion getLolChatConnection() {
         try {
-            return (ILolChatConnetion) new InitialContext().lookup("java:global/LemonBot-ear/LemonBot-ejb/LolChatConnection");
+            return (ILolChatConnetion) new InitialContext().lookup("de.lemonknight.xmpp.ILolChatConnetion");
         } catch (NamingException ex) {
             LOGGER.log(Level.SEVERE, null, ex);
             return null;
